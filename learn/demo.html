@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<h1>我的第一个 JavaScript 程序</h1>
+<p id="demo" >这是一个段落</p>
+<h1 id="title">大大的标题</h1>
+<button type="button" onclick="displayDate()">显示日期</button>
+<div id="box">
+    <span style="display: none">隐藏的元素</span>
+    <span>小黑</span>
+</div>
+</body>
+
+<script>
+    function displayDate(){
+        // document.getElementById("demo").innerHTML=Date();
+        // window.alert("出现日期了");
+        setInterval(function(){
+            document.getElementById("demo").innerHTML=Date().toString();
+        },1000);
+    }
+
+    array=[1,2,3,4,5];
+    console.log(array.length);
+    console.log(array.size);
+    var student={
+        firstName:'John',
+        lastName:'Doe',
+        sex:0,
+        age:15
+    }
+    function nineByNine(){
+        for(var i=1;i<=9;i++){
+            var s="";
+            for(var j=1;j<=i;j++){
+                s+=j+"x"+i+"="+(j*i)+" ";
+            }
+            console.log(s);
+        }
+    }
+    nineByNine();
+    console.log(document.getElementById("box").innerHTML);
+    console.log(document.getElementById("box").innerText);
+
+    function display(callback,time){
+        setTimeout(callback,time);
+    }
+
+    let time=5000;
+    display(()=>{
+        console.log(time+"后，执行了")},time);
+
+    var array=[1,2,3,4,5];
+    var array2=[5,4,3,2,1];
+    array.forEach((value,index)=>{
+        console.log("array["+index+"]="+value+";");});
+    console.log(array.map((value, index) => {
+        return value + array2[index]
+    }));
+</script>
+</html>
